@@ -5,14 +5,13 @@ import json
 import requests
 
 from credentials import *
-payload = {'AccessToken': access_token}
 
-ENDPOINT = "https://www.strava.com/"
+SERVER = "https://www.strava.com/"
 VERSION = "api/v3/"
 
-URL = ENDPOINT + VERSION
-headers = {"Authorization":"Bearer {}".format(access_token)}
-endpoint = URL + "athlete"
-response = requests.get(endpoint,headers=headers)
+ENDPOINT = SERVER + VERSION
+HEADERS = {"Authorization":"Bearer {}".format(access_token)}
+URL = ENDPOINT + "athlete"
+RESPONSE = requests.get(URL, headers=HEADERS)
 
-print(response.json())
+print(RESPONSE.json())
